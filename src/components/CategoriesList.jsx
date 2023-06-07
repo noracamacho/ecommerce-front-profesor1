@@ -28,6 +28,8 @@ const CategoriesList = () => {
         dispatch(filterByCategoryThunk(id));
         setCategorySelected(id)
     }
+    console.log('category selected', categorySelected);
+    console.log('categories', categories);
 
     return (
         <ListGroup>

@@ -10,11 +10,13 @@ const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { validateLogin } = useValidateLogin();
+  console.log('product', product);
 
   const addToCart = (e) => {
     e.stopPropagation();
     const errorMessage = "You have to login to add products to the cart";
     if(!validateLogin(errorMessage)) return;
+    console.log('product.id', product.id);
     dispatch(addProductCart({productId: product.id, quantity: 1}));
   }
 
@@ -22,7 +24,8 @@ const ProductCard = ({ product }) => {
     <Card className="product-card" onClick={() => navigate(`/products/${product.id}`)}>
       <Card.Img
         variant="top"
-        src={product.images[0].url}
+        // src={product.images[0].url}
+        src={product.productImgs[0].url}
         className="product-image"
       />
       <Card.Body>

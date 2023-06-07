@@ -16,7 +16,7 @@ const Purchases = () => {
     dispatch(getPurchases());
   }, [dispatch]);
 
-  console.log(purchases[0]?.product.price)
+  // console.log(purchases[0]?.product.price)
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -26,6 +26,7 @@ const Purchases = () => {
   const navigateToProduct = productId => {
     navigate(`/products/${productId}`);
   }
+  console.log('purchases', purchases);
 
   return (
     <section>
@@ -45,7 +46,9 @@ const Purchases = () => {
             <tr key={purchase.id}>
               <td>
                 <img 
-                  src={purchase.product.images[0].url} 
+                  // src={purchase.product.images[0].url} 
+                  src={purchase.product.productImgs[0].url} 
+
                   alt="" 
                   style={{width: "100px", padding: " 10px", background: "#fff"}}
                 />

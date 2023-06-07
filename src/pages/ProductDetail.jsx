@@ -21,7 +21,10 @@ const ProductDetail = () => {
     dispatch(request(async () => {
       const res = await axios().get(`/products/${id}`);
       setProduct(res.data);
-      dispatch(filterByCategoryThunk(res.data.category.id));
+      console.log('res.dat', res.data);
+      // dispatch(filterByCategoryThunk(res.data.category.id));
+      dispatch(filterByCategoryThunk(res.data.categoryId));
+
     }));
     window.scrollTo({top: 0, behavior: "smooth"})
   }, [dispatch, id]);
@@ -29,6 +32,7 @@ const ProductDetail = () => {
   const addToCart = () => {
     dispatch(addProductCart({quantity, productId: product.id}));
   }
+  // console.log('product', product);
 
   if (!product) return <>Loading...</>
 
@@ -37,7 +41,8 @@ const ProductDetail = () => {
       <Row>
         <Col lg={5} className="pe-5">
           <Carousel style={{background: "#fff", borderRadius: "20px"}} interval={null} variant="dark">
-            {product.images.map(image => (
+            {/* {product.images.map(image => ( */}
+            {product.productImgs.map(image => (
               <Carousel.Item key={image.id}>
                 <img
                   className="d-block w-100 mb-5"

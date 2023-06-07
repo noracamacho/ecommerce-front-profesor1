@@ -27,11 +27,15 @@ const ProductCart = ({ product, index }) => {
     const deleteProduct = () => {
         dispatch(deleteProductCart(product.id, index));
     }
+    console.log('product', product);
+    console.log('product.product', product.product);
+    // console.log('product.product.productImg[0].url', product.product.productImg[0].url);
 
     return (
         <>
         <div className='product-cart'>
-            <img src={product.product.images[0].url} alt="" />
+            {/* <img src={product.product.images[0].url} alt="" /> */}
+            <img src={product.product.productImgs[0].url} alt="" />
             <div className="details">
                 <h5 onClick={navigateToProduct}>
                     {product.product.title}
