@@ -17,8 +17,12 @@ export default axios;
 // https://ecommerceapp-verv.onrender.com
 // GitHub API
 // https://github.com/noracamacho/ecommerceApp.git
-// Git Front Profesor en Github
-// 
+// Github Front Profesor
+// https://github.com/noracamacho/ecommerce-front-profesor1.git
 // Front Profesor desplegado en Netlify
+// ecommerce-frontend-alumnos.netlify.app
+// Github Front Profesor
+// https://github.com/noracamacho/ecommerce-front-profesor1.git
+// Front Nora desplegado en Netlify
 // 
-// Documento desplegado en Netlify
+
